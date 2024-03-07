@@ -38,5 +38,16 @@ export const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.page').then( m => m.TabsPage)
-  }
+  },
+  {
+    path: 'place-detail',
+    loadComponent: () => import('./places/place-detail/place-detail.page').then( m => m.PlaceDetailPage)
+  },
+  {
+    path: 'place-detail',
+    loadComponent: () =>
+      import('./places/place-detail/place-detail.page').then(
+        (m) => m.PlaceDetailPage
+      ),
+  },
 ];

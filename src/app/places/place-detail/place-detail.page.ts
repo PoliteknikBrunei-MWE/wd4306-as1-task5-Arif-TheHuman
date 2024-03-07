@@ -2,17 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { cart } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-places',
-  templateUrl: './places.page.html',
-  styleUrls: ['./places.page.scss'],
+  selector: 'app-place-detail',
+  templateUrl: './place-detail.page.html',
+  styleUrls: ['./place-detail.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class PlacesPage implements OnInit {
-  places: string[] = ['Brunei', 'Tutong', 'Belait', 'Temburong']
-  constructor() { }
+export class PlaceDetailPage implements OnInit {
+
+  constructor() { 
+    addIcons({ cart });
+  }
 
   ngOnInit() {
   }
