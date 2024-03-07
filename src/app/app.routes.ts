@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
+import { PlaceDetailPage } from './places/place-detail/place-detail.page';
 
 export const routes: Routes = [
   {
@@ -42,6 +43,10 @@ export const routes: Routes = [
   {
     path: 'place-detail',
     loadComponent: () => import('./places/place-detail/place-detail.page').then( m => m.PlaceDetailPage)
+  },
+  {
+    path: 'place-detail/:place', 
+    component: PlaceDetailPage 
   },
   {
     path: 'place-detail',
