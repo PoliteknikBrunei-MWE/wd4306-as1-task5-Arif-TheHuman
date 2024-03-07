@@ -8,6 +8,16 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'offers',
+    loadComponent: () =>
+      import('./offers/offers.page').then((m) => m.OffersPage),
+  },
+  {
+    path: 'places',
+    redirectTo: '/tabs/places',
+    pathMatch: 'full',
+  },
+  {
     path: 'tabs',
     component: TabsPage,
     children: [
