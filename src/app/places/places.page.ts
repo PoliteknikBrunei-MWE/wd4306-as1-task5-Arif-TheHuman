@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule} from '@ionic/angular';
 import { RouterModule, Router } from '@angular/router';
+import { MenuToolbarComponent } from '../components/menu-toolbar/menu-toolbar.component';
 
 @Component({
   selector: 'app-places',
   templateUrl: './places.page.html',
   styleUrls: ['./places.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule]
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule, MenuToolbarComponent]
 })
 export class PlacesPage implements OnInit {
   places: string[] = ['Brunei', 'Tutong', 'Belait', 'Temburong']
