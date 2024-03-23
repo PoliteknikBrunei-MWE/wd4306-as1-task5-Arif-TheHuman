@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
 import { PlaceDetailPage } from './places/place-detail/place-detail.page';
+import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
   {
@@ -12,7 +13,8 @@ export const routes: Routes = [
     path: 'offers',
     loadComponent: () =>
       import('./offers/offers.page').then((m) => m.OffersPage),
-  },
+    canLoad: [AuthGuard]
+    },
   {
     path: 'places',
     redirectTo: '/tabs/places',
@@ -21,10 +23,11 @@ export const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+    canLoad: [AuthGuard],
     children: [
       {
         path: 'places',
-        loadComponent: () => import('./places/places.page').then( m => m.PlacesPage)
+        loadComponent: () => import('./places/places.page').then( m => m.PlacesPage),
       },
       {
         path: 'offers',
@@ -42,11 +45,13 @@ export const routes: Routes = [
   },
   {
     path: 'place-detail',
-    loadComponent: () => import('./places/place-detail/place-detail.page').then( m => m.PlaceDetailPage)
+    loadComponent: () => import('./places/place-detail/place-detail.page').then( m => m.PlaceDetailPage),
+    canLoad: [AuthGuard],
   },
   {
     path: 'place-detail/:place', 
-    component: PlaceDetailPage 
+    component: PlaceDetailPage,
+    canLoad: [AuthGuard],
   },
   {
     path: 'place-detail',
